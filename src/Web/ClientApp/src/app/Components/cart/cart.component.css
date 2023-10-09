@@ -1,0 +1,25 @@
+main{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: start;
+    justify-content: center;
+    gap: 1em;
+}
+
+section{
+}
+
+main > :first-child{
+    flex-basis: 500px;
+    flex-grow: 10;
+}
+
+main > :last-child{
+    flex-basis: 300px;
+    flex-grow: 1;
+    background-color:#f5f7fa;
+}
+
+main > :last-child span {
+  color: #a8b2bf;
+}

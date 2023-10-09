@@ -1,0 +1,23 @@
+.Container {
+  display: flex;
+  justify-content: space-between;
+
+  .Params {
+    display: flex;
+    flex-direction: column;
+
+    & > div input {
+      display: block;
+    }
+  }
+
+  .Results {
+    width: 75%;
+    & > div{
+      display: grid;
+      grid-template-columns: auto auto auto;
+      justify-items: center;
+      gap: 1rem;
+    }
+  }
+}
