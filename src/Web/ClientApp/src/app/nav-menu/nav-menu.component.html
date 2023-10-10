@@ -1,34 +1,32 @@
 <header>
-  <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-    <div class="container">
-      
-      <a class="navbar-brand" [routerLink]="['/']">AZ</a>
-      
-      <button class="navbar-toggler"
-              type="button"
-              data-toggle="collapse"
-              data-target=".navbar-collapse"
-              aria-label="Toggle navigation"
-              [attr.aria-expanded]="isExpanded"
-              (click)="toggle()">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <!--<div>
-        <input type="text" placeholder="Search" id="search" />
-        <button (click)="search()">🔍</button>
-      </div>-->
-      
+  <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom">
+    <div class="container row">
+
+      <div class="col-1">
+        <a class="navbar-brand" [routerLink]="['/']">AZ</a>
+        <button class="navbar-toggler"
+                type="button"
+                data-toggle="collapse"
+                data-target=".navbar-collapse"
+                aria-label="Toggle navigation"
+                [attr.aria-expanded]="isExpanded"
+                (click)="toggle()">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+      </div>
+
+      <div class="col-8">
         <div class="input-group">
           <input type="text" id="search" class="form-control" placeholder="Search" aria-label="Text input with segmented dropdown button">
           <button type="button" class="btn btn-secondary" (click)="search()">🔍</button>
         </div>
-      
-      <div class="navbar-collapse collapse d-sm-inline-flex justify-content-end"
+      </div>
+
+
+      <div class="navbar-collapse collapse d-sm-inline-flex justify-content-end col-3"
            [ngClass]="{ show: isExpanded }">
         <ul class="navbar-nav flex-grow">
-          <li class="nav-item" [routerLinkActive]="['link-active']">
-            <a class="nav-link text-dark" [routerLink]="['/fetch-data']">Fetch data</a>
-          </li>
           <li class="nav-item" [routerLinkActive]="['link-active']">
             <a class="nav-link text-dark" [routerLink]="['/todo']">Todo</a>
           </li>
@@ -44,5 +42,23 @@
         </ul>
       </div>
     </div>
+    <div>
+      
+    </div>
+  </nav>
+  <nav class="nav border-bottom box-shadow">
+    <a class="nav-link active" aria-current="page" href="#">Phones</a>
+    <a class="nav-link" href="#">Headphones</a>
+    <a class="nav-link" href="#">Chargers & Power Banks</a>
+    <!--<div class="dropdown">
+      <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+        Category
+      </button>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" routerLink="#">Phones</a></li>
+        <li><a class="dropdown-item" routerLink="#">Headphones</a></li>
+        <li><a class="dropdown-item" routerLink="#">Chargers & Power Banks</a></li>
+      </ul>
+    </div>-->
   </nav>
 </header>

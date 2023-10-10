@@ -7,20 +7,22 @@ import { ModalModule } from 'ngx-bootstrap/modal';
 import { AppComponent } from './app.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { HomeComponent } from './home/home.component';
-import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { TodoComponent } from './todo/todo.component';
 import { CartComponent } from './Components/cart/cart.component';
 import { SearchComponent } from './Pages/search/search.component';
 import { AuthorizeInterceptor } from 'src/api-authorization/authorize.interceptor';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ProductComponent } from './Pages/product/product.component';
+import { ProductCardComponent } from './Components/product-card/product-card.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavMenuComponent,
     HomeComponent,
-    FetchDataComponent,
     CartComponent,
+    ProductComponent,
+    ProductCardComponent,
     SearchComponent,
     TodoComponent
   ],
@@ -30,9 +32,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     FormsModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
-      { path: 'fetch-data', component: FetchDataComponent },
       { path: 'todo', component: TodoComponent },
       { path: 'cart', component: CartComponent },
+      { path: 'product/:id', component: ProductComponent },
       { path: 'search/:id', component: SearchComponent },
     ]),
     BrowserAnimationsModule,

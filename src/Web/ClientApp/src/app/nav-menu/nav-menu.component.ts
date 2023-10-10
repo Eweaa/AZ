@@ -23,6 +23,6 @@ export class NavMenuComponent {
 
   search = () => {
     this.query = (<HTMLInputElement>document.getElementById("search"))?.value;
-    this.router.navigate(["/search/", this.query])
+    this.router.navigateByUrl(`/search/${this.query}`);
   }
 }

@@ -1,0 +1,10 @@
+<a routerLink="/product/23U" class="card" style="width: 15rem;" *ngFor="let p of products">
+  <img src="https://images.samsung.com/is/image/samsung/p6pim/eg/2302/gallery/eg-galaxy-s23-s918-sm-s918bzecmea-534861980" class="card-img-top" alt="...">
+  <div class="card-body">
+    <p class="card-text">{{p.name}}</p>
+    <p class="card-text">EGP {{p.price}}</p>
+    <div>
+      <span class="badge text-bg-success">4.8</span>
+    </div>
+  </div>
+</a>
