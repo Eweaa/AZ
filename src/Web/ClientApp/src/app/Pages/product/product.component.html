@@ -1,1 +1,16 @@
-<p>product works!</p>
+<div ngClass="p-4">
+
+  <section ngClass="prodImg">
+    <img src="{{data.imgPath}}" />
+  </section>
+
+  <section ngClass="prodInfo p-4">
+    <h3>{{data.name}}</h3>
+    <h6>{{data.description}}</h6>
+    <div *ngIf="data.quantity < 10" style="font-weight: bold; color: #b02a37;">
+      Only {{data.quantity}} Remaining
+    </div>
+    <button ngClass="btn btn-primary">Add To Cart</button>
+  </section>
+
+</div>

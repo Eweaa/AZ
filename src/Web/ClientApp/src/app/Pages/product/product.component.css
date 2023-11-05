@@ -1,0 +1,24 @@
+div{
+    display: flex;
+    justify-content: space-between;
+}
+
+div > section{
+    width: 45%;
+}
+
+.prodImg{
+    text-align: center;
+    height: 70vh;
+}
+
+.prodImg img{
+    /*width: 100%;*/
+    height: 100%;
+    object-fit: cover;
+    margin-inline: auto;
+}
+
+.prodInfo{
+    text-align: left;
+}

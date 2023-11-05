@@ -7,13 +7,13 @@ import { ModalModule } from 'ngx-bootstrap/modal';
 import { AppComponent } from './app.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { HomeComponent } from './home/home.component';
-import { TodoComponent } from './todo/todo.component';
 import { CartComponent } from './Components/cart/cart.component';
 import { SearchComponent } from './Pages/search/search.component';
 import { AuthorizeInterceptor } from 'src/api-authorization/authorize.interceptor';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ProductComponent } from './Pages/product/product.component';
 import { ProductCardComponent } from './Components/product-card/product-card.component';
+import { CategoryComponent } from './Pages/category/category.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +24,7 @@ import { ProductCardComponent } from './Components/product-card/product-card.com
     ProductComponent,
     ProductCardComponent,
     SearchComponent,
-    TodoComponent
+    CategoryComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -32,10 +32,10 @@ import { ProductCardComponent } from './Components/product-card/product-card.com
     FormsModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
-      { path: 'todo', component: TodoComponent },
       { path: 'cart', component: CartComponent },
       { path: 'product/:id', component: ProductComponent },
       { path: 'search/:id', component: SearchComponent },
+      { path: 'category/:id', component: CategoryComponent },
     ]),
     BrowserAnimationsModule,
     ModalModule.forRoot()

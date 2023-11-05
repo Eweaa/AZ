@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
-import { ProductsClient } from '../../web-api-client';
-import { Router } from '@angular/router';
+import { ChangeDetectorRef, Component, TemplateRef, ViewChild, ViewContainerRef } from '@angular/core';
+import { Product, ProductsClient } from '../../web-api-client';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Observable, map } from 'rxjs';
 
 @Component({
   selector: 'app-search',
@@ -8,18 +9,20 @@ import { Router } from '@angular/router';
   styleUrls: ['./search.component.scss']
 })
 export class SearchComponent {
-  products: any[];
-  constructor(private service: ProductsClient, private router: Router) { }
+  products: Product[];
+  constructor(private service: ProductsClient, private router: Router, private cdr: ChangeDetectorRef, private route: ActivatedRoute) { }
   ngOnInit() {
     console.log(this.router.url)
     let query: any = this.router.url.split('/search/');
     let search: string = query[1];
     console.log("search1: ", search);
-    //this.router.navigate(["/search/", search]);
-    //this.router.navigateByUrl("/search/${search}")
+    //this.products = this.route.params.pipe(
+    //  map(params => params.s),
+    //  map(s => this.service.getSearchProducts(search))
+    //);
     this.service.getSearchProducts(search).subscribe(res => {
-      console.table(res);
       this.products = res;
+      this.cdr.detectChanges();
     })
   }
 }

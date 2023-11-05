@@ -13,6 +13,9 @@
 
   .Results {
     width: 75%;
+    height: 80vh;
+    overflow-y: scroll;
+
 
     & > div {
       display: grid;
@@ -22,8 +25,8 @@
       gap: 2rem;
     }
 
-    .card{
-        text-decoration: none;
+    .card {
+      text-decoration: none;
     }
   }
 }

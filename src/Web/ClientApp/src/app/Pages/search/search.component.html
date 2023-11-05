@@ -1,6 +1,6 @@
-<div ngClass="Search">
+<div ngClass="Search p-4">
 
-  <section ngClass="Params p-4">
+  <section ngClass="Params">
 
     <div>
       <input type="checkbox" id="freeShipping" />
@@ -9,8 +9,14 @@
 
     <div>
       <h6>Price</h6>
-      <input type="number" placeholder="Min" />
-      <input type="number" placeholder="Max" />
+      <div class="form-floating mb-3">
+        <input type="number" class="form-control" id="floatingInput" placeholder="Min">
+        <label for="floatingInput">Min</label>
+      </div>
+      <div class="form-floating mb-3">
+        <input type="number" class="form-control" id="floatingInput" placeholder="Max">
+        <label for="floatingInput">Max</label>
+      </div>
     </div>
 
   </section>
@@ -18,15 +24,19 @@
   <section ngClass="Results" *ngIf="products.length !== 0 else showThis">
     <h6>Sort By</h6>
     <div>
-
-
-      <!--<app-product-card [products]="products"></app-product-card>-->
-
-      <a routerLink="/product/23U" class="card" style="width: 15rem;" *ngFor="let p of products">
-        <img src="https://images.samsung.com/is/image/samsung/p6pim/eg/2302/gallery/eg-galaxy-s23-s918-sm-s918bzecmea-534861980" class="card-img-top" alt="...">
-        <div class="card-body">
+      <!--<ng-container>-->
+        <!--<product-card [products]="products"></product-card>
+      </ng-container>-->
+      <a routerLink="/product/{{p.id}}" class="card" style="width: 16rem; height: 22rem;" *ngFor="let p of products">
+        <div style="height: 50%;">
+          <img src={{p.imgPath}} style="height: 100%; object-fit:cover;" class="card-img-top" alt="...">
+        </div>
+        <div class="card-body" style="height:50%">
           <p class="card-text">{{p.name}}</p>
           <p class="card-text">EGP  <b>{{p.price - (p.price * p.discount / 100)}}</b></p>
+          <div *ngIf="p.quantity < 10" style="font-weight: bold; color: #b02a37;">
+            Only {{p.quantity}} Remaining
+          </div>
           <div>
             <span class="badge text-bg-success">4.8</span>
           </div>

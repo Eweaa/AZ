@@ -8,8 +8,10 @@ public class Products : EndpointGroupBase
     public override void Map(WebApplication app)
     {
         app.MapGroup(this)
+            //.RequireAuthorization()
             .MapGet(GetCategoryProducts, "Category/{Id}")  
             .MapGet(GetSellerProducts, "Seller/{Id}")  
+            .MapGet(GetProduct, "Product/{Id}")  
             .MapGet(GetSearchProducts, "{Search}");  
     }
 
@@ -19,6 +21,11 @@ public class Products : EndpointGroupBase
     }
     
     public async Task<List<Product>> GetSellerProducts(ISender sender, [AsParameters] GetSellerProductsListQuery query)
+    {
+        return await sender.Send(query);
+    }
+
+    public async Task<Product> GetProduct(ISender sender, [AsParameters] GetProductQuery query)
     {
         return await sender.Send(query);
     }

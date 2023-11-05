@@ -27,9 +27,6 @@
       <div class="navbar-collapse collapse d-sm-inline-flex justify-content-end col-3"
            [ngClass]="{ show: isExpanded }">
         <ul class="navbar-nav flex-grow">
-          <li class="nav-item" [routerLinkActive]="['link-active']">
-            <a class="nav-link text-dark" [routerLink]="['/todo']">Todo</a>
-          </li>
           <li class="nav-item">
             <a class="nav-link text-dark" href="/api" target="_blank">API</a>
           </li>
@@ -47,9 +44,9 @@
     </div>
   </nav>
   <nav class="nav border-bottom box-shadow">
-    <a class="nav-link active" aria-current="page" href="#">Phones</a>
-    <a class="nav-link" href="#">Headphones</a>
-    <a class="nav-link" href="#">Chargers & Power Banks</a>
+    <a class="nav-link active" aria-current="page" routerLink="/category/4">Phones</a>
+    <a class="nav-link" routerLink="/category/6">Headphones</a>
+    <a class="nav-link" routerLink="/category/5">Chargers & Power Banks</a>
     <!--<div class="dropdown">
       <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
         Category
